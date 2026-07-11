@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Clinique - Facturation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="menu-lateral">
+        <h2>🏥 Clinique</h2>
+        <hr>
+        <a href="index.html">📊 Tableau de bord</a>
+        <a href="patient.html">👤 Patients</a>
+        <a href="medecins.html">🩺 Médecins</a>
+        <a href="rendezvous.html">📅 Rendez-vous</a>
+        <a href="consultations.html">📋 Consultations</a>
+        <a href="pharmacie.html">💊 Pharmacie</a>
+        <a href="factures.html" class="lien-actif">🧾 Facturation</a>
+        <a href="statistiques.html">📈 Statistiques</a>
+    </div>
+
+    <div class="contenu-principal">
+        <header>
+            <h1>Facturation</h1>
+            <p>Gérez les factures et les paiements des patients.</p>
+        </header>
+
+        <div class="bloc-donnees" style="margin-top: 30px;">
+            <h3>➕ Créer une facture</h3>
+
+            <form action="#" method="POST" class="formulaire-simple">
+                <div class="groupe-champ">
+                    <label>Patient :</label>
+                    <input type="text" name="nom_patient" placeholder="Ex: Ranaivo Jean" required>
+                </div>
+
+                <div class="groupe-champ">
+                    <label>Montant (Ar) :</label>
+                    <input type="number" name="montant" placeholder="Ex: 50000" min="0" required>
+                </div>
+
+                <div class="groupe-champ">
+                    <label>Description :</label>
+                    <input type="text" name="description" placeholder="Ex: Consultation générale">
+                </div>
+
+                <button type="submit" class="bouton-valider">Créer la facture</button>
+            </form>
+        </div>
+
+        <div class="bloc-donnees" style="margin-top: 30px;">
+            <h3>🧾 Factures récentes</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>N° Facture</th>
+                        <th>Patient</th>
+                        <th>Date</th>
+                        <th>Montant</th>
+                        <th>Statut</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>F-1042</td>
+                        <td>Ranaivo Jean</td>
+                        <td>10/07/2026</td>
+                        <td>50 000 Ar</td>
+                        <td><span class="badge badge-ok">Payée</span></td>
+                    </tr>
+                    <tr>
+                        <td>F-1043</td>
+                        <td>Razafy Marie</td>
+                        <td>10/07/2026</td>
+                        <td>25 000 Ar</td>
+                        <td><span class="badge badge-attente">En attente</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

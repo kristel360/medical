@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Clinique - Pharmacie</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="menu-lateral">
+        <h2>🏥 Clinique</h2>
+        <hr>
+        <a href="index.html">📊 Tableau de bord</a>
+        <a href="patient.html">👤 Patients</a>
+        <a href="medecins.html">🩺 Médecins</a>
+        <a href="rendezvous.html">📅 Rendez-vous</a>
+        <a href="consultations.html">📋 Consultations</a>
+        <a href="pharmacie.html" class="lien-actif">💊 Pharmacie</a>
+        <a href="factures.html">🧾 Facturation</a>
+        <a href="statistiques.html">📈 Statistiques</a>
+    </div>
+
+    <div class="contenu-principal">
+        <header>
+            <h1>Pharmacie</h1>
+            <p>Suivez le stock de médicaments et les alertes de rupture.</p>
+        </header>
+
+        <div class="bloc-donnees" style="margin-top: 30px;">
+            <h3>➕ Ajouter un médicament</h3>
+
+            <form action="#" method="POST" class="formulaire-simple">
+                <div class="groupe-champ">
+                    <label>Nom du médicament :</label>
+                    <input type="text" name="nom_medicament" placeholder="Ex: Paracétamol" required>
+                </div>
+
+                <div class="groupe-champ">
+                    <label>Quantité en stock :</label>
+                    <input type="number" name="quantite" placeholder="Ex: 120" min="0" required>
+                </div>
+
+                <div class="groupe-champ">
+                    <label>Seuil d'alerte :</label>
+                    <input type="number" name="seuil_alerte" placeholder="Ex: 20" min="0" required>
+                </div>
+
+                <button type="submit" class="bouton-valider">Ajouter au stock</button>
+            </form>
+        </div>
+
+        <div class="bloc-donnees" style="margin-top: 30px;">
+            <h3>💊 Stock actuel</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Médicament</th>
+                        <th>Quantité</th>
+                        <th>Seuil d'alerte</th>
+                        <th>Statut</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Paracétamol</strong></td>
+                        <td>340</td>
+                        <td>50</td>
+                        <td><span class="badge badge-ok">En stock</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Amoxicilline</strong></td>
+                        <td>12</td>
+                        <td>30</td>
+                        <td><span class="badge badge-alerte">Rupture</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ibuprofène</strong></td>
+                        <td>28</td>
+                        <td>30</td>
+                        <td><span class="badge badge-attente">Stock bas</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

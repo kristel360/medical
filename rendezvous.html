@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Clinique - Rendez-vous</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="menu-lateral">
+        <h2>🏥 Clinique</h2>
+        <hr>
+        <a href="index.html">📊 Tableau de bord</a>
+        <a href="patient.html">👤 Patients</a>
+        <a href="medecins.html">🩺 Médecins</a>
+        <a href="rendezvous.html" class="lien-actif">📅 Rendez-vous</a>
+        <a href="consultations.html">📋 Consultations</a>
+        <a href="pharmacie.html">💊 Pharmacie</a>
+        <a href="factures.html">🧾 Facturation</a>
+        <a href="statistiques.html">📈 Statistiques</a>
+    </div>
+
+    <div class="contenu-principal">
+        <header>
+            <h1>Rendez-vous</h1>
+            <p>Planifiez et suivez les rendez-vous des patients.</p>
+        </header>
+
+        <div class="bloc-donnees" style="margin-top: 30px;">
+            <h3>➕ Planifier un rendez-vous</h3>
+
+            <form action="#" method="POST" class="formulaire-simple">
+                <div class="groupe-champ">
+                    <label>Patient :</label>
+                    <input type="text" name="nom_patient" placeholder="Ex: Ranaivo Jean" required>
+                </div>
+
+                <div class="groupe-champ">
+                    <label>Médecin :</label>
+                    <input type="text" name="nom_medecin" placeholder="Ex: Dr. Rakoto" required>
+                </div>
+
+                <div class="groupe-champ">
+                    <label>Date :</label>
+                    <input type="date" name="date_rdv" required>
+                </div>
+
+                <div class="groupe-champ">
+                    <label>Heure :</label>
+                    <input type="time" name="heure_rdv" required>
+                </div>
+
+                <button type="submit" class="bouton-valider">Enregistrer le rendez-vous</button>
+            </form>
+        </div>
+
+        <div class="bloc-donnees" style="margin-top: 30px;">
+            <h3>📅 Liste des rendez-vous</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Heure</th>
+                        <th>Patient</th>
+                        <th>Médecin</th>
+                        <th>Statut</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:30</td>
+                        <td>Ranaivo Jean</td>
+                        <td>Dr. Rakoto</td>
+                        <td><span class="badge badge-attente">En attente</span></td>
+                        <td><a href="#" class="lien-action">✏️ Modifier</a></td>
+                    </tr>
+                    <tr>
+                        <td>09:15</td>
+                        <td>Razafy Marie</td>
+                        <td>Dr. Nicole</td>
+                        <td><span class="badge badge-ok">Confirmé</span></td>
+                        <td><a href="#" class="lien-action">✏️ Modifier</a></td>
+                    </tr>
+                    <tr>
+                        <td>11:00</td>
+                        <td>Rasoa Emma</td>
+                        <td>Dr. Rakoto</td>
+                        <td><span class="badge badge-alerte">Annulé</span></td>
+                        <td><a href="#" class="lien-action">✏️ Modifier</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

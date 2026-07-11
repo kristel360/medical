@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Clinique - Accueil</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="menu-lateral">
+        <h2>🏥 Clinique</h2>
+        <hr>
+        <a href="index.html" class="lien-actif">📊 Tableau de bord</a>
+        <a href="patient.html">👤 Patients</a>
+        <a href="medecins.html">🩺 Médecins</a>
+        <a href="rendezvous.html">📅 Rendez-vous</a>
+        <a href="consultations.html">📋 Consultations</a>
+        <a href="pharmacie.html">💊 Pharmacie</a>
+        <a href="factures.html">🧾 Facturation</a>
+        <a href="statistiques.html">📈 Statistiques</a>
+    </div>
+
+
+    <div class="contenu-principal">
+
+        <header>
+            <h1>Tableau de bord</h1>
+            <p id="date-jour">Bienvenue ! Voici l'activité de la clinique aujourd'hui.</p>
+        </header>
+
+        <div class="zone-cartes">
+
+            <div class="carte-bleue">
+                <h3>Patients</h3>
+                <p class="chiffre">1 240</p>
+            </div>
+
+            <div class="carte-verte">
+                <h3>Rendez-vous du jour</h3>
+                <p class="chiffre">18</p>
+            </div>
+
+            <div class="carte-rouge">
+                <h3>Alerte Pharmacie</h3>
+                <p class="chiffre">4 ruptures</p>
+            </div>
+
+            <div class="carte-jaune">
+                <h3>Recettes</h3>
+                <p class="chiffre">450 000 Ar</p>
+            </div>
+
+        </div>
+
+        <div class="zone-tableaux">
+
+            <div class="bloc-donnees">
+                <h3>📅 Prochains Rendez-vous</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Heure</th>
+                            <th>Patient</th>
+                            <th>Médecin</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>08:30</td>
+                            <td>Ranaivo Jean</td>
+                            <td>Dr. Rakoto</td>
+                            <td><span class="badge badge-attente">En attente</span></td>
+                        </tr>
+                        <tr>
+                            <td>09:15</td>
+                            <td>Razafy Marie</td>
+                            <td>Dr. Nicole</td>
+                            <td><span class="badge badge-ok">Confirmé</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

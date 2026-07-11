@@ -1,0 +1,321 @@
+/* =========================================================
+   GESTION CLINIQUE — style.css
+   Feuille de style simple, pensée pour un débutant.
+   Tout le code est commenté et organisé par section.
+   ========================================================= */
+
+/* ---------- 1. Polices Google Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+/* ---------- 2. Variables de couleurs (palette) ----------
+   On regroupe toutes les couleurs ici : si on veut changer
+   le thème plus tard, on ne modifie que cette section. */
+:root {
+    --bg: #F2F6F5;              /* fond général de la page */
+    --surface: #FFFFFF;         /* fond des cartes / tableaux */
+    --sidebar: #123B36;         /* vert sapin foncé du menu */
+    --sidebar-hover: #1B4E47;
+    --text-main: #1B2B29;       /* texte principal */
+    --text-muted: #647B75;      /* texte secondaire / descriptions */
+    --border: #E2E8E6;
+
+    --accent-teal: #1F8A70;     /* couleur d'accent principale */
+    --accent-blue: #3B6FA0;     /* carte "Patients" */
+    --accent-green: #2F9E5B;    /* carte "Rendez-vous" */
+    --accent-red: #D6534A;      /* carte "Alerte" */
+    --accent-amber: #D99B32;    /* carte "Recettes" */
+
+    --radius: 10px;
+    --ombre: 0 2px 10px rgba(18, 59, 54, 0.06);
+}
+
+/* ---------- 3. Réinitialisation de base ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
+    display: flex; /* place le menu et le contenu côte à côte */
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ---------- 4. Menu latéral (sidebar) ---------- */
+.menu-lateral {
+    width: 240px;
+    background-color: var(--sidebar);
+    color: #F2F6F5;
+    padding: 28px 18px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    flex-shrink: 0;
+}
+
+.menu-lateral h2 {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+    letter-spacing: 0.3px;
+}
+
+.menu-lateral hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 16px;
+}
+
+.menu-lateral a {
+    display: block;
+    padding: 11px 14px;
+    margin-bottom: 4px;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    color: rgba(242, 246, 245, 0.85);
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.menu-lateral a:hover {
+    background-color: var(--sidebar-hover);
+    color: #FFFFFF;
+}
+
+/* Le lien de la page actuelle est mis en valeur */
+.menu-lateral a.lien-actif {
+    background-color: var(--accent-teal);
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+/* ---------- 5. Contenu principal ---------- */
+.contenu-principal {
+    flex: 1;
+    padding: 36px 44px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+}
+
+header p {
+    color: var(--text-muted);
+    margin-bottom: 28px;
+}
+
+/* ---------- 6. Cartes de statistiques ---------- */
+.zone-cartes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 32px;
+}
+
+/* Style commun à toutes les cartes */
+.zone-cartes > div {
+    background-color: var(--surface);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    box-shadow: var(--ombre);
+    border-left: 4px solid var(--accent-teal); /* couleur changée par carte */
+}
+
+.zone-cartes h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 10px;
+}
+
+/* Le chiffre est écrit en police "monospace" pour un effet
+   "écran médical" — c'est la petite touche distinctive du design */
+.chiffre {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.9rem;
+    font-weight: 600;
+}
+
+.carte-bleue  { border-left-color: var(--accent-blue); }
+.carte-verte  { border-left-color: var(--accent-green); }
+.carte-rouge  { border-left-color: var(--accent-red); }
+.carte-jaune  { border-left-color: var(--accent-amber); }
+
+.carte-bleue  .chiffre { color: var(--accent-blue); }
+.carte-verte  .chiffre { color: var(--accent-green); }
+.carte-rouge  .chiffre { color: var(--accent-red); }
+.carte-jaune  .chiffre { color: var(--accent-amber); }
+
+/* ---------- 7. Blocs de contenu (tableaux, formulaires) ---------- */
+.bloc-donnees {
+    background-color: var(--surface);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    box-shadow: var(--ombre);
+}
+
+.bloc-donnees h3 {
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+}
+
+/* ---------- 8. Tableaux ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    text-align: left;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--text-muted);
+    padding: 10px 12px;
+    border-bottom: 2px solid var(--border);
+}
+
+tbody td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.93rem;
+}
+
+tbody tr:hover {
+    background-color: var(--bg);
+}
+
+.lien-action {
+    color: var(--accent-teal);
+    font-weight: 600;
+}
+
+.lien-action:hover {
+    text-decoration: underline;
+}
+
+/* ---------- 9. Formulaire ---------- */
+.formulaire-simple {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-items: end;
+}
+
+.groupe-champ label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text-muted);
+}
+
+.groupe-champ input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.93rem;
+    transition: border-color 0.15s ease;
+}
+
+.groupe-champ input:focus {
+    outline: none;
+    border-color: var(--accent-teal);
+}
+
+.bouton-valider {
+    grid-column: span 1;
+    background-color: var(--accent-teal);
+    color: #FFFFFF;
+    border: none;
+    padding: 11px 18px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.93rem;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.bouton-valider:hover {
+    background-color: #176e59;
+    transform: translateY(-1px);
+}
+
+/* Message de confirmation affiché par le JavaScript */
+.message-confirmation {
+    display: none;
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-radius: var(--radius);
+    background-color: #E7F5EF;
+    color: #176e59;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Barre de recherche (page patients) */
+.barre-recherche {
+    width: 100%;
+    max-width: 320px;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+}
+
+.barre-recherche:focus {
+    outline: none;
+    border-color: var(--accent-teal);
+}
+
+/* ---------- 10. Badges de statut (Confirmé, Rupture, Payée...) ---------- */
+.badge {
+    display: inline-block;
+    padding: 4px 11px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.badge-ok       { background-color: #E7F5EF; color: #1F8A70; } /* confirmé / payée / en stock */
+.badge-attente  { background-color: #FBF1DE; color: #B9791F; } /* en attente */
+.badge-alerte   { background-color: #FBEAE9; color: #C23B32; } /* rupture / annulé */
+
+/* ---------- 11. Petite mise en page responsive ---------- */
+@media (max-width: 900px) {
+    body {
+        flex-direction: column;
+    }
+
+    .menu-lateral {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .zone-cartes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .formulaire-simple {
+        grid-template-columns: 1fr;
+    }
+}

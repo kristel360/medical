@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Clinique - Médecins</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="menu-lateral">
+        <h2>🏥 Clinique</h2>
+        <hr>
+        <a href="index.html">📊 Tableau de bord</a>
+        <a href="patient.html">👤 Patients</a>
+        <a href="medecins.html" class="lien-actif">🩺 Médecins</a>
+        <a href="rendezvous.html">📅 Rendez-vous</a>
+        <a href="consultations.html">📋 Consultations</a>
+        <a href="pharmacie.html">💊 Pharmacie</a>
+        <a href="factures.html">🧾 Facturation</a>
+        <a href="statistiques.html">📈 Statistiques</a>
+    </div>
+
+    <div class="contenu-principal">
+        <header>
+            <h1>Gestion des Médecins</h1>
+            <p>Consultez l'équipe médicale et ajoutez de nouveaux praticiens.</p>
+        </header>
+
+        <div class="bloc-donnees" style="margin-top: 30px;">
+            <h3>➕ Ajouter un médecin</h3>
+
+            <form action="#" method="POST" class="formulaire-simple">
+                <div class="groupe-champ">
+                    <label>Nom complet :</label>
+                    <input type="text" name="nom_medecin" placeholder="Ex: Dr. Rakoto" required>
+                </div>
+
+                <div class="groupe-champ">
+                    <label>Spécialité :</label>
+                    <input type="text" name="specialite" placeholder="Ex: Cardiologie" required>
+                </div>
+
+                <div class="groupe-champ">
+                    <label>Téléphone :</label>
+                    <input type="tel" name="telephone" placeholder="Ex: 034 00 000 00">
+                </div>
+
+                <button type="submit" class="bouton-valider">Enregistrer le médecin</button>
+            </form>
+        </div>
+
+        <div class="bloc-donnees" style="margin-top: 30px;">
+            <h3>🩺 Équipe médicale</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Spécialité</th>
+                        <th>Téléphone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><strong>Dr. Rakoto</strong></td>
+                        <td>Cardiologie</td>
+                        <td>032 44 555 66</td>
+                        <td><a href="#" class="lien-action">👁️ Voir Fiche</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><strong>Dr. Nicole</strong></td>
+                        <td>Pédiatrie</td>
+                        <td>033 22 111 44</td>
+                        <td><a href="#" class="lien-action">👁️ Voir Fiche</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

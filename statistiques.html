@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Clinique - Statistiques</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="menu-lateral">
+        <h2>🏥 Clinique</h2>
+        <hr>
+        <a href="index.html">📊 Tableau de bord</a>
+        <a href="patient.html">👤 Patients</a>
+        <a href="medecins.html">🩺 Médecins</a>
+        <a href="rendezvous.html">📅 Rendez-vous</a>
+        <a href="consultations.html">📋 Consultations</a>
+        <a href="pharmacie.html">💊 Pharmacie</a>
+        <a href="factures.html">🧾 Facturation</a>
+        <a href="statistiques.html" class="lien-actif">📈 Statistiques</a>
+    </div>
+
+    <div class="contenu-principal">
+        <header>
+            <h1>Statistiques</h1>
+            <p>Vue d'ensemble des performances de la clinique.</p>
+        </header>
+
+        <div class="zone-cartes">
+            <div class="carte-bleue">
+                <h3>Total Patients</h3>
+                <p class="chiffre">1 240</p>
+            </div>
+
+            <div class="carte-verte">
+                <h3>Consultations ce mois</h3>
+                <p class="chiffre">312</p>
+            </div>
+
+            <div class="carte-jaune">
+                <h3>Recettes du mois</h3>
+                <p class="chiffre">8 450 000 Ar</p>
+            </div>
+
+            <div class="carte-rouge">
+                <h3>Taux d'annulation</h3>
+                <p class="chiffre">6 %</p>
+            </div>
+        </div>
+
+        <div class="bloc-donnees">
+            <h3>📈 Activité par mois</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mois</th>
+                        <th>Consultations</th>
+                        <th>Nouveaux patients</th>
+                        <th>Recettes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mai 2026</td>
+                        <td>280</td>
+                        <td>45</td>
+                        <td>7 200 000 Ar</td>
+                    </tr>
+                    <tr>
+                        <td>Juin 2026</td>
+                        <td>298</td>
+                        <td>52</td>
+                        <td>7 850 000 Ar</td>
+                    </tr>
+                    <tr>
+                        <td>Juillet 2026</td>
+                        <td>312</td>
+                        <td>60</td>
+                        <td>8 450 000 Ar</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
